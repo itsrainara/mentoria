@@ -1,0 +1,8 @@
+{
+  "name": "variaveis",
+  "version": "1.0.0",
+  "description": "variáveis de programação",
+  "main": "index.js",
+  "author": "Rainara Silva",
+  "license": "MIT"
+}
