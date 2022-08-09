@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objetos part2</title>
+  </head>
+  <body>
+    <script>
+      var novoUsuario = {
+        nome: 'Rainara',
+        idade: 20,
+        país: 'Brasil',
+        youtube: 'Rainara Silva'
+      }
+
+      //extraindo uma propriedade do objeto
+      var { nome, idade, país } = novoUsuario
+      console.log(nome, idade, país)
+
+      // extraindo uma propriedade e colocando em uma variavel
+      var { nome: primeiroNome } = novoUsuario
+      console.log(primeiroNome)
+
+      var {youtube: canal} = novoUsuario;
+      console.log(canal);
+
+      // objeto dentro da propriedade
+      var usuario2 = {
+        nome: {
+          primeiro: 'Carlos',
+          ultimo: 'Sousa'
+        }
+      }
+
+      var {nome: {primeiro}} = usuario2;
+      console.log(primeiro)
+    </script>
+  </body>
+</html>

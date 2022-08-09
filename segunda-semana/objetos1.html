@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objetos</title>
+  </head>
+
+  <body>
+    aaaaa
+  </body>
+
+  <script>
+    // criando um objeto
+
+    var perfil = {
+      nome: 'rainara',
+      idade: 20,
+      instagram: '@itsrainara',
+      'ultimo-nome': 'silva'
+    }
+    // impressão
+    console.log(perfil)
+
+    // selecionar algum especifico
+    console.log(perfil.idade)
+
+    //impressao de algo especifico com caracter especial
+    console.log(perfil['ultimo-nome'])
+
+    // adicionar novas propriedades
+    perfil.ano = 2022
+    console.log(perfil)
+
+    // deletar algo
+    delete perfil.instagram
+
+    // adicionando um array
+    perfil.hobbies = ['jogar', 'passear', 'programar']
+    console.log(perfil)
+
+    //adicionando um objeto
+    perfil.competencias = {
+      linguagens: ['JavaScript', 'Python', 'PHP', 'Java'],
+      idiomas: ['Inglês', 'espanhol', 'francês']
+    }
+
+    // adicionando uma função
+    var perfil2 = {
+      digaOi: function (name) {
+        return `Olá ${name}`
+      }
+    }
+
+    console.log(perfil2.digaOi('Rainara'))
+    console.log(perfil2.digaOi('Pessoal'))
+
+    // adicionando variaveis dentro de outra variavel
+    var cor = 'azul'
+    var idade = 20
+    var nome = 'Renata'
+
+    var perfil3 = {
+      cor,
+      idade,
+      nome
+    }
+
+    console.log(perfil3)
+
+    // juntando objetos
+    var perfil4 = {
+      nome: 'maria',
+      idade: 40
+    }
+
+    var extraInfo = {
+      país: 'Brasil',
+      estado: 'São Paulo'
+    }
+    // crio uma nova variavel com um novo nome
+    // com '{}' o objeto alvo foi um objeto vazio
+    var novoPerfil = Object.assign({}, perfil4, extraInfo)
+    console.log(novoPerfil)
+
+    // alterei um objeto
+    /*
+      Object.assing(perfil4, extraInfo)
+      console.log('perfil4', extraInfo)
+    */
+
+    // mais atualizado
+    var novoPerfil2 = {
+      ...perfil4,
+      ...extraInfo,
+      ...{
+        profissão: 'programador'
+      }
+    }
+
+    console.log(novoPerfil2)
+
+    //nome da propriedade ser o valor da variavel
+    var nomeVariavel = 'Estado'
+
+    var perfil5 = {
+      país: 'Brasil',
+      [nomeVariavel]: 'Rio de janeiro'
+    }
+
+    console.log(perfil5)
+
+    // array com objetos
+    var usuarios = [
+      {
+        nome: 'ana',
+        idade: 20
+      },
+      {
+        nome: 'joão',
+        idade: 25
+      },
+      {
+        nome: 'beatriz',
+        idade: 19
+      }
+    ]
+
+    console.log(usuarios)
+
+    // criar objeto para navegar no array de usuarios
+    var usuario = {
+      posicao: 0,
+      get atual() {
+        // retornando um valor
+        return usuarios[this.posicao]
+      },
+      set atual(posicao) {
+        // atribuindo um valor
+        this.posicao = posicao
+      },
+      proximo() {
+        ++this.posicao
+      },
+      anterior() {
+        --this.posicao
+      }
+    }
+
+    console.log(usuario.atual) // {nome: 'ana', idade: 20}
+    usuario.proximo()
+
+    console.log(usuario.atual) // {nome: 'joao', idade: 25}
+
+    usuario.proximo()
+    console.log(usuario.atual) // {nome: 'beatriz, idade: 19'}
+
+    usuario.anterior()
+    console.log(usuario.atual)
+
+    // especificando a parte exata para imprimir
+    usuario.atual(0)
+    console.log(usuario.atual) // {nome: 'ana', idade: 20}
+
+    usuario.atual(2)
+    console.log(usuario.atual) // {nome: 'beatriz, idade: 19'}
+  </script>
+</html>
