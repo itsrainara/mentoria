@@ -13,7 +13,7 @@ var MediaSalarial = (salario_total/2);
 var myArrayOfNumbers = [2, 4, 6];
 
 
-/* Mostrando a variável nome */
+/* Mostrando a variável nome*/
 
 console.log('Olá, '+nome +' seu email é: '+ email);
 console.log('Sua idade é '+ idade +' anos.');
