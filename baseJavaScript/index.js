@@ -4,13 +4,16 @@ var email = 'rainara.cps@gmail.com';
 /* Variável do tipo INT */
 var idade = 20;
 var salário = 2.045;
-/* Variável do tipo decimal */
+/* Variável do tipo decimal */ 
 var salário2 = 2.589;
 var salario_total = salário + salário2;
 
 var MediaSalarial = (salario_total/2);
 
-/* Mostrando a variável nome */
+var myArrayOfNumbers = [2, 4, 6];
+
+
+/* Mostrando a variável nome*/
 
 console.log('Olá, '+nome +' seu email é: '+ email);
 console.log('Sua idade é '+ idade +' anos.');

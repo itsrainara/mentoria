@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>functions</title>
+  </head>
+  <body>
+    <script>
+      // criando uma função
+      function escreva() {
+        console.log('Programador a bordo')
+      }
+      escreva()
+      escreva()
+      console.log('atrapalhando aqui')
+      escreva()
+      escreva()
+
+      // customizando
+      function escrevaMensagem(mensagem) {
+        console.log(mensagem)
+      }
+
+      escrevaMensagem('Rainara silva')
+      escrevaMensagem('feliz aniversário')
+
+      // armazenando/retornando com variavel
+      function soma(a, b) {
+        return a + b
+      }
+      var resultadoSoma = soma(10, 8)
+      console.log(resultadoSoma)
+
+      /* poderia imprimir direto que o resultado seria o mesmo
+      console.log(soma(10, 8)) */
+
+      // array como parametro da funçao
+      function somaTudo(numeros) {
+        var total = 0
+
+        for (num of numeros) {
+          total = total + num
+        }
+
+        return total
+      }
+
+      var arrayNumeros = [3, 2, 1, 4, 6]
+      var resultado = somaTudo(arrayNumeros)
+      console.log('soma tudo', resultado)
+
+      // parametro rest
+      function endereco(pais, estado, cidade, ...complementos) {
+        console.log(pais)
+        console.log(estado)
+        console.log(cidade)
+        console.log(complementos) // array de posição 0
+      }
+
+      endereco(
+        'Brasil',
+        'São Paulo',
+        'Campinas',
+        '001',
+        'cep: 13.053.523',
+        'bloco 2'
+      )
+      //IIFE - funções auto-invocaveis
+      ;(function autoExecuta(nome) {
+        console.log('exibindo', nome)
+      })('Rainara')
+
+      //armazenando função em uma variavel
+      var subtraiValor = function subtraiDoisNum(a, b) {
+        return a - b
+      }
+      console.log(subtraiValor(7, 3))
+
+      //função anonima
+      var somaValores = function (a, b) {
+        return a + b
+      }
+      console.log(somaValores(4, 6))
+
+      // callback
+      function somaCallBack(a, b, fnCallBack) {
+        return fnCallBack(a + b)
+      }
+      console.log(
+        somaCallBack(2, 5, function (total) {
+          return total * 2
+        })
+      )
+
+      // valor the flow na função
+      function dados(nome = 'rainara', nome2 = 'julia') {
+        console.log(nome)
+        console.log(nome2)
+      }
+      dados('carlos', 'valesca')
+    </script>
+  </body>
+</html>

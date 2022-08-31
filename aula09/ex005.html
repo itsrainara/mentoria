@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primary steps with DOM</title>
+    <style>
+      body {
+        background: rgb(255, 217, 217);
+        color: black;
+        font: normal 18pt Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Starting studies with DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong></p>
+    <div id="msg">clique em mim</div>
+
+    <script>
+      var corpo = window.document.body
+      var p1 = window.document.getElementsByTagName('p')[0]
+      window.document.write(p1.innerText) // innerText faz mostrar o texto q ta dentro de p
+      // mudar cores com js
+      // corpo.style.background = 'black'
+      // p1.style.color = 'green'
+
+      var d = window.document.getElementById('msg')
+      
+      // d.style.background = 'blue'
+
+      // d.innerText = 'ola' // alterei o que estava escrito
+      // window.document.getElementById('msg').innerText = 'hey' // tambem alterei, de maneira diferente
+      
+      // # pois usei id, usar . caso seja por classe
+      // var d = window.document.querySelector('div#msg')
+      // d.style.color = 'black'
+    </script>
+  </body>
+</html>

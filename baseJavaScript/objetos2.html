@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objetos part2</title>
+  </head>
+  <body>
+    <script>
+      var novoUsuario = {
+        nome: 'Rainara',
+        idade: 20,
+        país: 'Brasil',
+        youtube: 'Rainara Silva'
+      }
+
+      //extraindo uma propriedade do objetoo
+      var { nome, idade, país } = novoUsuario
+      console.log(nome, idade, país)
+
+      // extraindo uma propriedade e colocando em uma variavel
+      var { nome: primeiroNome } = novoUsuario
+      console.log(primeiroNome)
+
+      var { youtube: canal } = novoUsuario
+      console.log(canal)
+
+      // objeto dentro da propriedade
+      var usuario2 = {
+        nome: {
+          primeiro: 'Carlos',
+          segundo: 'Sousa'
+        }
+      }
+
+      var {
+        nome: { primeiro }
+      } = usuario2
+      console.log(primeiro)
+
+      // criando propriedade p/ caso nao exista uma
+      // caso 'segundo' nao existisse passaria a existir, valor the flow
+      var {
+        nome: { segundo = 'silva' }
+      } = usuario2
+      console.log(segundo)
+
+      /* função ('usuario' vai ser um objeto)
+
+      function imprimeUsuario(usuario) {
+        console.log(usuario.nome),
+        console.log(usuario.idade),
+        console.log(usuario.sexo)
+      };
+
+      coloquei {} para indicar as propriedades que quero extrair*/
+
+      function imprimeUsuario({ nome, idade, sexo, país = 'japão' }) {
+        //um parametro só
+        console.log(nome), console.log(idade), console.log(sexo)
+        console.log(país)
+      }
+
+      // invoquei função e por parametro passo os objetos
+      var usuarioFunction = {
+        nome: 'Charlottie',
+        idade: 20,
+        sexo: 'F',
+        país: 'Brasil'
+      }
+
+      imprimeUsuario(usuarioFunction)
+
+      // imprimindo propriedades do objeto com objeto: object
+      console.log(Object.keys(usuarioFunction))
+
+      //imprimindo valor da propriedade com object
+      console.log(Object.values(usuarioFunction))
+    </script>
+  </body>
+</html>
