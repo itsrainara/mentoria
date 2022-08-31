@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events DOM</title>
+
+    <style>
+      div#area {
+        font: 20pt Arial;
+        background: pink;
+        color: black;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+  <!--identificador, quando clico com mouse no escopo, quando entra no escopo, e quando sai-->
+    <div id="area" onclick="clicked()" onmouseenter="login()" onmouseout="out()">interaja</div>
+
+    <script>
+      // variável q servirá para as funções abaixo
+      var a = window.document.getElementById('area')
+
+      //quando clicar mostrará 'clicked' e ficará vermelho
+      function clicked() {
+        a.innerText = "clicked"
+        a.style.background = 'red'
+      }
+      // quando entrar mostrará 'inside'
+      function login(){
+        a.innerText = "inside"
+      }
+      // quando sair do click, volta a ser pink
+      function out (){
+        a.innerText = "outside"
+        a.style.background= 'pink'
+      }
+    </script>
+  </body>
+</html>
