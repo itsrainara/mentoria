@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>functions part 2</title>
-</head>
-<body>
-  <script>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>functions part 2</title>
+  </head>
+  <body>
+    <script>
+      function usuario() {
+        this.nome = 'rainara'
+        this.idade = 20
+        this.soma = function (a, b) {
+          return a + b
+        }
+      }
+      //alteramos o valor de this usando o new
+      var usuario = new usuario()
+      console.log(usuario)
+      console.log(usuario.nome)
+      console.log(usuario.soma(2, 5))
 
-
-
-
-
-
-  </script>
-</body>
+      // call
+      function personagem() {
+        // está vindo do this
+        console.log(this)
+      }
+      var personagemThis = {
+        nome: 'barbara'
+      }
+      //coloquei o objeto da variavel dentro da função
+      personagem.call(personagemThis)
+    </script>
+  </body>
 </html>
